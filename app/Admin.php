@@ -17,7 +17,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','verifyToken'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -28,11 +28,6 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function role()
-    {
-//        return $this->belongsToMany('App\Role_admin');
-        return $this->belongsToMany(role::class,'role_admins');
-    }
 
     /**
      * Send the password reset notification.
